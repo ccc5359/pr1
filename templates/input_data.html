@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html>
-   <style>
-    /* 讓按鈕置中 */
-    input[type="submit"] {
-        display: block;
-        margin: 0 auto;
-        background-color: yellow; /* 更改背景顏色為黃色 */
-    }
-</style>
+
 <head>
     <title>Data Entry Form</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-size: 40px;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select {
+            font-size: 40px;
+        }
+    </style>
 </head>
+
 <body>
     <h2>Data Entry Form</h2>
     <form action="/submit_form" method="post">
@@ -28,4 +41,6 @@
         <input type="submit" value="Submit">
     </form>
 </body>
+
 </html>
+
