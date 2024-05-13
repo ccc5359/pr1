@@ -29,7 +29,7 @@ def handle_form():
     first_digit = ord(first_char.upper()) - ord('A') + 10
 
     # Multiply the converted first character by 1 and 9
-    sum_product = (first_digit/10) * 1 + (first_digit%10) * 9
+    sum_product = (first_digit // 10) * 1 + (first_digit % 10) * 9
 
     # Multiply the next 8 digits by 8, 7, 6, 5, 4, 3, 2, 1
     for i in range(1, 9):
