@@ -24,7 +24,24 @@ def handle_form():
         
     if not id_number[1:].isdigit():
         return "身份證字號後九碼應為數字", 400
-        
+
+    # Convert first character to corresponding number
+    first_digit = ord(first_char.upper()) - ord('A') + 10
+
+    # Multiply the converted first character by 1 and 9
+    sum_product = first_digit * 1 + first_digit * 9
+
+    # Multiply the next 8 digits by 8, 7, 6, 5, 4, 3, 2, 1
+    for i in range(1, 9):
+        sum_product += int(id_number[i]) * (9 - i)
+
+    # Add the last digit
+    sum_product += int(id_number[-1])
+
+    # Check if divisible by 10
+    if sum_product % 10 != 0:
+        return "無效的身份證字號", 400
+    
     # Validate name (assuming it's alphabetic)
     if not re.match(r'^[A-Za-z\s]+$', name):
         return "Invalid name", 400
