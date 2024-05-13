@@ -17,9 +17,7 @@ def handle_form():
     # Validate ID number (assuming it's numeric)
     if len(id_number) != 10:
         return "身份證字號應為10碼", 400
-        
-    if sum_product % 10 == 0:
-        return "身份證字號正確", 400
+
     first_char = id_number[0]
     if not first_char.isalpha():
         return "第一碼應為英文", 400
@@ -43,8 +41,9 @@ def handle_form():
     # Check if divisible by 10
     if sum_product % 10 != 0:
         return "無效的身份證字號", 400
-    else :
+    else:
         return "身份證字號正確"
+
     # Validate name (assuming it's alphabetic)
     if not re.match(r'^[A-Za-z\s]+$', name):
         return "Invalid name", 400
@@ -60,4 +59,4 @@ def handle_form():
     return "All entries are valid", 200
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80)  # Listen on all available network interfaces and port 80 
+    app.run(host='0.0.0.0', port=80)  # Listen on all available network interfaces and port 80
