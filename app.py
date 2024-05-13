@@ -21,7 +21,10 @@ def handle_form():
     first_char = id_number[0]
     if not first_char.isalpha():
         return "第一碼應為英文", 400
-
+        
+    if not id_number[1:].isdigit():
+        return "身份證字號後九碼應為數字", 400
+        
     # Validate name (assuming it's alphabetic)
     if not re.match(r'^[A-Za-z\s]+$', name):
         return "Invalid name", 400
