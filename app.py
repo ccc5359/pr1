@@ -17,7 +17,9 @@ def handle_form():
     # Validate ID number (assuming it's numeric)
     if len(id_number) != 10:
         return "身份證字號應為10碼", 400
-    
+        
+    if sum_product % 10 == 0:
+        return "身份證字號正確", 400
     first_char = id_number[0]
     if not first_char.isalpha():
         return "第一碼應為英文", 400
