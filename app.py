@@ -43,7 +43,7 @@ def handle_form():
     # Check if divisible by 10
     if sum_product % 10 != 0:
         return "無效的身份證字號", 400
-    else
+    else :
         return "身份證字號正確"
     # Validate name (assuming it's alphabetic)
     if not re.match(r'^[A-Za-z\s]+$', name):
