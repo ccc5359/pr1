@@ -39,11 +39,12 @@ def handle_form():
 
     # Add the last digit
     sum_product += int(id_number[-1])
-    print(sum_product)
+    
     # Check if divisible by 10
     if sum_product % 10 != 0:
         return "無效的身份證字號", 400
-    
+    else
+        return "身份證字號正確"
     # Validate name (assuming it's alphabetic)
     if not re.match(r'^[A-Za-z\s]+$', name):
         return "Invalid name", 400
