@@ -13,7 +13,7 @@ def handle_form():
     name = request.form.get('name')
     gender = request.form.get('gender')
     email = request.form.get('email')
-
+    
     # Validate ID number (assuming it's numeric)
     if len(id_number) != 10:
         return "身份證字號應為10碼", 400
@@ -37,7 +37,7 @@ def handle_form():
 
     # Add the last digit
     sum_product += int(id_number[-1])
-
+    print(sum_product)
     # Check if divisible by 10
     if sum_product % 10 != 0:
         return "無效的身份證字號", 400
