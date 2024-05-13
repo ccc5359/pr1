@@ -32,8 +32,8 @@ def handle_form():
     sum_product = first_digit * 1 + first_digit * 9
 
     # Multiply the next 8 digits by 8, 7, 6, 5, 4, 3, 2, 1
-    for i in range(2, 10):
-        sum_product += int(id_number[i]) * (10 - i)
+    for i in range(1, 9):
+        sum_product += int(id_number[i]) * (9 - i)
 
     # Add the last digit
     sum_product += int(id_number[-1])
